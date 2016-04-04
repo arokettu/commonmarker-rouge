@@ -1,3 +1,28 @@
+# HighMarker
+
 Playing with commonmark, trying to inject syntax highlight into AST stage
 
-Maybe it will become a gem
+## Installation
+
+Add this line to your application's Gemfile:
+
+```ruby
+gem 'highmarker'
+```
+
+And then execute:
+
+    $ bundle
+
+Or install it yourself as:
+
+    $ gem install highmarker
+
+## Usage
+
+TODO: Write usage instructions here
+
+## License
+
+The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
+

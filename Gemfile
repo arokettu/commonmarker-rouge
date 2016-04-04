@@ -1,6 +1,4 @@
-source 'https://rubygems.org/'
+source 'https://rubygems.org'
 
-gem 'commonmarker'
-gem 'rouge'
-gem 'coderay'
-gem 'pry'
+# Specify your gem's dependencies in highmarker.gemspec
+gemspec
