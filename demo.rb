@@ -1,6 +1,4 @@
-require 'commonmarker'
-require 'rouge'
-require 'coderay'
+require_relative 'lib/highmarker'
 
 content = <<-MD
 [link](http://example.com/)
@@ -30,34 +28,15 @@ MD
 
 style = '<link rel="stylesheet" href="main.css">'
 
-html = CommonMarker.render_doc(content, :default).to_html
+html = CommonMarker.render_html(content, :default)
 
 File.write('tmp/commonmark-vanilla.html', style+html)
 
-ast_for_rouge = CommonMarker.render_doc(content, :default)
-
-ast_for_rouge.walk do |node|
-  if node.type == :code_block
-    next if node.fence_info == ''
-
-    source = node.string_content
-
-    lexer = Rouge::Lexers::C.new
-    formatter = Rouge::Formatters::HTML.new(wrap: false)
-
-    html = '<div class="highlighter-rouge"><pre class="highlight"><code>' + formatter.format(lexer.lex(source)) + '</code></pre></div>'
-
-    new_node = CommonMarker::Node.new(:html)
-    new_node.string_content = html
-
-    node.insert_before(new_node)
-    node.delete
-  end
-end
-
-html = ast_for_rouge.to_html
+html = HighMarker::Rouge.render_doc(content, :default).to_html
 
 File.write('tmp/commonmark-rouge.html', style+html)
+
+require 'coderay'
 
 ast_for_coderay = CommonMarker.render_doc(content, :default)
 
