@@ -38,24 +38,6 @@ File.write('tmp/commonmark-rouge.html', style+html)
 
 require 'coderay'
 
-ast_for_coderay = CommonMarker.render_doc(content, :default)
-
-ast_for_coderay.walk do |node|
-  if node.type == :code_block
-    next if node.fence_info == ''
-
-    source = node.string_content
-
-    html = CodeRay.scan(source, :c).div
-    
-    new_node = CommonMarker::Node.new(:html)
-    new_node.string_content = html
-
-    node.insert_before(new_node)
-    node.delete
-  end
-end
-
-html = ast_for_coderay.to_html
+html = HighMarker::CodeRay.render_html(content, :default)
 
 File.write('tmp/commonmark-coderay.html', style+html)
