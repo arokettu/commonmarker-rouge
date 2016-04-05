@@ -1,5 +1,8 @@
 # HighMarker
 
+[![Gem Version](https://badge.fury.io/rb/highmarker.svg)](https://badge.fury.io/rb/highmarker)
+[![Code Climate](https://codeclimate.com/github/sandfoxme/highmarker/badges/gpa.svg)](https://codeclimate.com/github/sandfoxme/highmarker)
+
 A [CommonMarker](https://rubygems.org/gems/commonmarker) wrapper with
 syntax highlight support. Syntax highlight is provided by either
 [Rouge](https://rubygems.org/gems/rouge) or 
