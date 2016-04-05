@@ -1,16 +1,25 @@
-module HighMarker
-  module Rouge
-    begin
-      require 'rouge'
+require 'commonmarker/rouge/version'
 
-      AVAILABLE = true
-    rescue LoadError, SyntaxError
-      AVAILABLE = false
+require 'commonmarker'
+require 'rouge'
+
+module CommonMarker
+  module Rouge
+    module_function
+
+    def render_doc(text, cmark_options = :default, **highmark_options)
+      cmark = highmark_options[:cmark_class] || ::CommonMarker
+
+      ast = cmark.render_doc(text, cmark_options)
+      process_ast(ast, highmark_options)
+      ast
     end
 
-    extend ::HighMarker::Abstract
+    def render_html(text, cmark_options = :default)
+      render_doc(text, cmark_options).to_html
+    end
 
-    def self.process_ast(ast, highmark_options)
+    def process_ast(ast, highmark_options)
       ast.walk do |node|
         if node.type == :code_block
           next if node.fence_info == ''
