@@ -19,7 +19,7 @@ module HighMarker
 
           lexer = ::Rouge::Lexer.find_fancy(node.fence_info)
 
-          formatter = (highmark_options[:formatter] || ::Rouge::Formatters::HTML).new(highmark_options[:rouge_options] || {})
+          formatter = (highmark_options[:formatter] || ::Rouge::Formatters::HTML).new(highmark_options[:options] || {})
 
           html = '<div class="highlighter-rouge">' + formatter.format(lexer.lex(source)) + '</div>'
 

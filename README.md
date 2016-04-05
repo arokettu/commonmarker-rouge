@@ -1,26 +1,74 @@
 # HighMarker
 
-Playing with commonmark, trying to inject syntax highlight into AST stage
+A [CommonMarker](https://rubygems.org/gems/commonmarker) wrapper with
+syntax highlight support. Syntax highlight is provided by either
+[Rouge](https://rubygems.org/gems/rouge) or 
+[CodeRay](https://rubygems.org/gems/coderay).
 
-## Installation
+## Using with Rouge
 
-Add this line to your application's Gemfile:
+Rouge is a recommended option but neither of the highlighters are added 
+as strong dependencies so you should require them explicitly.
+
+### Installation
+
+Add these lines to your application's Gemfile:
 
 ```ruby
 gem 'highmarker'
+gem 'rouge'
 ```
 
-And then execute:
+### Usage
 
-    $ bundle
+```ruby
+# use default CommonMarker class and Rouge::Formatters::HTML formatter
+HighMarker::Rouge.render_html(content)
 
-Or install it yourself as:
+# get CommonMarker parsed AST
+HighMarker::Rouge.render_doc(content)
 
-    $ gem install highmarker
+# pass options to CommonMarker
+HighMarker::Rouge.render_html(content, [:normalize, :sourcepos])
 
-## Usage
+# use custom CommonMarker wrapper (must provide compatible render_doc)
+HighMarker::Rouge.render_html(content, cmark_class: CommonMarkerWrapper)
 
-TODO: Write usage instructions here
+# use custom Rouge formatter
+HighMarker::Rouge.render_html(content, formatter: Rouge::Formatters::HTMLLinewise)
+
+# pass some options to Rouge
+HighMarker::Rouge.render_html(content, options: { css_class: 'custom-class' })
+```
+
+## Using with CodeRay
+
+CodeRay support is incomplete and experimental.
+
+### Installation
+
+Add these lines to your application's Gemfile:
+
+```ruby
+gem 'highmarker'
+gem 'coderay'
+```
+
+### Usage
+
+```ruby
+# use default CommonMarker class
+HighMarker::CodeRay.render_html(content)
+
+# get CommonMarker parsed AST
+HighMarker::CodeRay.render_doc(content)
+
+# pass options to CommonMarker
+HighMarker::CodeRay.render_html(content, [:normalize, :sourcepos])
+
+# use custom CommonMarker wrapper (must provide compatible render_doc)
+HighMarker::CodeRay.render_html(content, cmark_class: CommonMarkerWrapper)
+```
 
 ## License
 
