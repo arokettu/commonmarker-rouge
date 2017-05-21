@@ -7,7 +7,7 @@ module CommonMarker
   module Rouge
     module_function
 
-    def render_doc(text, cmark_options = :default, **highmark_options)
+    def render_doc(text, cmark_options = :DEFAULT, **highmark_options)
       cmark = highmark_options[:cmark_class] || ::CommonMarker
 
       ast = cmark.render_doc(text, cmark_options)
@@ -15,7 +15,7 @@ module CommonMarker
       ast
     end
 
-    def render_html(text, cmark_options = :default)
+    def render_html(text, cmark_options = :DEFAULT)
       render_doc(text, cmark_options).to_html
     end
 
