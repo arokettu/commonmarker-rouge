@@ -24,7 +24,7 @@ CommonMarker::Rouge.render_html(content)
 CommonMarker::Rouge.render_doc(content)
 
 # pass options to CommonMarker
-CommonMarker::Rouge.render_html(content, [:normalize, :sourcepos])
+CommonMarker::Rouge.render_html(content, [:SAFE, :SOURCEPOS])
 
 # use custom CommonMarker wrapper (must provide compatible render_doc)
 CommonMarker::Rouge.render_html(content, cmark_class: CommonMarkerWrapper)
