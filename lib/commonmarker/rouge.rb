@@ -27,7 +27,7 @@ module CommonMarker
 
           source = node.string_content
 
-          lexer = ::Rouge::Lexer.find_fancy(node.fence_info)
+          lexer = ::Rouge::Lexer.find_fancy(node.fence_info) || ::Rouge::Lexers::PlainText
 
           formatter = (highmark_options[:formatter] || ::Rouge::Formatters::HTML).new(highmark_options[:options] || {})
 
