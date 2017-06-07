@@ -2,6 +2,7 @@ require 'commonmarker/rouge/version'
 
 require 'commonmarker'
 require 'rouge'
+require 'cgi'
 
 module CommonMarker
   module Rouge
@@ -30,7 +31,7 @@ module CommonMarker
 
           formatter = (highmark_options[:formatter] || ::Rouge::Formatters::HTML).new(highmark_options[:options] || {})
 
-          html = '<div class="highlighter-rouge">' + formatter.format(lexer.lex(source)) + '</div>'
+          html = '<div class="highlighter-rouge language-' + CGI.escapeHTML(node.fence_info) + '">' + formatter.format(lexer.lex(source)) + '</div>'
 
           new_node = ::CommonMarker::Node.new(:html)
           new_node.string_content = html
