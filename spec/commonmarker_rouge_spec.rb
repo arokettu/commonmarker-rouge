@@ -24,11 +24,7 @@ somecode
 ```
 MD
 
-    expected = <<-HTML
-<div class="highlighter-rouge language-haxxor&quot;&gt;yay!"><pre class=\"highlight\"><code>somecode
-</code></pre>
-</div>
-HTML
-    expect(html).to eq(expected)
+    expected = 'language-haxxor&quot;&gt;yay!'
+    expect(html).to include(expected) # find only escaped sequence
   end
 end
