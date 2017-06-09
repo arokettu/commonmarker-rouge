@@ -6,4 +6,4 @@ rvm:
   - '2.3.3'
   - '2.4.0'
   - ruby-head
-script: bundle exec rspec && if [ -d coverage ]; then bundle exec codeclimate-test-reporter; fi
+script: gem install bundler && bundle exec rspec && if [ -d coverage ]; then bundle exec codeclimate-test-reporter; fi
