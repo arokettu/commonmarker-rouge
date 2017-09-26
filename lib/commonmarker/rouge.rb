@@ -29,7 +29,18 @@ module CommonMarker
 
           lexer = ::Rouge::Lexer.find_fancy(node.fence_info) || ::Rouge::Lexers::PlainText.new
 
-          formatter = (highmark_options[:formatter] || ::Rouge::Formatters::HTML).new(highmark_options[:options] || {})
+          formatter_class = highmark_options[:formatter_class]
+          formatter       = highmark_options[:formatter]
+
+          # support format accepting class for a time being
+          if formatter.is_a? Class
+            formatter_class ||= formatter
+            formatter = nil
+          end
+
+          formatter_class ||= ::Rouge::Formatters::HTML
+
+          formatter ||= formatter_class.new(highmark_options[:options] || {})
 
           html = '<div class="highlighter-rouge language-' + CGI.escapeHTML(node.fence_info) + '">' + formatter.format(lexer.lex(source)) + '</div>'
 
