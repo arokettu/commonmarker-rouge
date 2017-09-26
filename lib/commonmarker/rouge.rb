@@ -8,19 +8,19 @@ module CommonMarker
   module Rouge
     module_function
 
-    def render_doc(text, cmark_options = :DEFAULT, **highmark_options)
-      cmark = highmark_options[:cmark_class] || ::CommonMarker
+    def render_doc(text, cmark_options = :DEFAULT, **cmr_options)
+      cmark = cmr_options[:cmark_class] || ::CommonMarker
 
       ast = cmark.render_doc(text, cmark_options)
-      process_ast(ast, highmark_options)
+      process_ast(ast, cmr_options)
       ast
     end
 
-    def render_html(text, cmark_options = :DEFAULT)
-      render_doc(text, cmark_options).to_html
+    def render_html(text, cmark_options = :DEFAULT, **cmr_options)
+      render_doc(text, cmark_options, **cmr_options).to_html
     end
 
-    def process_ast(ast, highmark_options)
+    def process_ast(ast, cmr_options)
       ast.walk do |node|
         if node.type == :code_block
           next if node.fence_info == ''
@@ -29,8 +29,8 @@ module CommonMarker
 
           lexer = ::Rouge::Lexer.find_fancy(node.fence_info) || ::Rouge::Lexers::PlainText.new
 
-          formatter_class = highmark_options[:formatter_class]
-          formatter       = highmark_options[:formatter]
+          formatter_class = cmr_options[:formatter_class]
+          formatter       = cmr_options[:formatter]
 
           # support format accepting class for a time being
           if formatter.is_a? Class
@@ -40,7 +40,7 @@ module CommonMarker
 
           formatter_class ||= ::Rouge::Formatters::HTML
 
-          formatter ||= formatter_class.new(highmark_options[:options] || {})
+          formatter ||= formatter_class.new(cmr_options[:options] || {})
 
           html = '<div class="highlighter-rouge language-' + CGI.escapeHTML(node.fence_info) + '">' + formatter.format(lexer.lex(source)) + '</div>'
 
