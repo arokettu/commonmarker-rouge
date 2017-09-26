@@ -32,11 +32,20 @@ CommonMarker::Rouge.render_html(content, [:SAFE, :SOURCEPOS])
 # use custom CommonMarker wrapper (must provide compatible render_doc)
 CommonMarker::Rouge.render_html(content, cmark_class: CommonMarkerWrapper)
 
-# use custom Rouge formatter
-CommonMarker::Rouge.render_html(content, formatter: Rouge::Formatters::HTMLLinewise)
+# use custom Rouge formatter by class
+CommonMarker::Rouge.render_html(content, formatter_class: Rouge::Formatters::HTMLLinewise)
+# or by instance
+CommonMarker::Rouge.render_html(content, formatter: Rouge::Formatters::HTMLTable.new(
+  Rouge::Formatters::HTML.new
+))
 
 # pass some options to Rouge
 CommonMarker::Rouge.render_html(content, options: { css_class: 'custom-class' })
+# or
+CommonMarker::Rouge.render_html(content, formatter: Rouge::Formatters::HTMLTable.new(
+  Rouge::Formatters::HTML.new, code_class: 'rouge-code'
+))
+
 ```
 
 ## License
