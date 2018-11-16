@@ -8,16 +8,17 @@ module CommonMarker
   module Rouge
     module_function
 
-    def render_doc(text, cmark_options = :DEFAULT, **cmr_options)
+    def render_doc(text, cmark_options = :DEFAULT, extensions = [], **cmr_options)
       cmark = cmr_options[:cmark_class] || ::CommonMarker
 
-      ast = cmark.render_doc(text, cmark_options)
+      ast = cmark.render_doc(text, cmark_options, extensions)
       process_ast(ast, cmr_options)
       ast
     end
 
-    def render_html(text, cmark_options = :DEFAULT, **cmr_options)
-      render_doc(text, cmark_options, **cmr_options).to_html
+    def render_html(text, cmark_options = :DEFAULT, render_options = :DEFAULT, extensions = [], **cmr_options)
+      doc = render_doc(text, cmark_options, extensions, **cmr_options)
+      doc.to_html(render_options)
     end
 
     def process_ast(ast, cmr_options)
