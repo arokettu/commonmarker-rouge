@@ -85,4 +85,16 @@ MD
 #     expect(html).to include(expected) # find only escaped sequence
 #   end
 
+  it 'supports autolink extensions' do
+    html = CommonMarker::Rouge.render_html("https://www.cnn.com", [:DEFAULT], [:DEFAULT], [:autolink])
+    expected = %Q(<p><a href="https://www.cnn.com">https://www.cnn.com</a></p>\n)
+    expect(html).to(eq(expected)) # find only escaped sequence
+  end
+
+  it 'supports strikethrough extensions' do
+    html = CommonMarker::Rouge.render_html("~abc~", [:DEFAULT], [:DEFAULT], [:strikethrough])
+    expected = %Q(<p><del>abc</del></p>\n)
+    expect(html).to(eq(expected)) # find only escaped sequence
+  end
+
 end

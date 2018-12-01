@@ -25,15 +25,29 @@ gem 'commonmarker-rouge'
 
 ## Usage
 
+Review the CommonMarker options to understand how to use the `render_html` command:
+
+* 1st parameter (optional) - [parse options](https://github.com/gjtorikian/commonmarker#parse-options)
+* 2nd parameter (optional) - [render options](https://github.com/gjtorikian/commonmarker#render-options)
+* 3rd parameter (optional) - [extensions](https://github.com/gjtorikian/commonmarker#extensions)
+
 ```ruby
 # use default CommonMarker class and Rouge::Formatters::HTML formatter
 CommonMarker::Rouge.render_html(content)
 
+# Basic examples with 1st and 2nd optional parameters
+CommonMarker::Rouge.render_html(content), [:DEFAULT], [:UNSAFE])
+CommonMarker::Rouge.render_html(content, [:DEFAULT], [:SOURCEPOS])
+CommonMarker::Rouge.render_html(content, [:DEFAULT], [:UNSAFE, :SOURCEPOS])
+
+# use GitHub extensions - both 1st/2nd parameters required
+CommonMarker::Rouge.render_html(content), [:DEFAULT], [:DEFAULT], [:table])
+CommonMarker::Rouge.render_html(content), [:DEFAULT], [:DEFAULT], [:table, :strikethrough])
+CommonMarker::Rouge.render_html(content), [:DEFAULT], [:DEFAULT], [:table, :strikethrough, :autolink])
+CommonMarker::Rouge.render_html(content), [:DEFAULT], [:DEFAULT], [:table, :strikethrough, :tagfilter])
+
 # get CommonMarker parsed AST
 CommonMarker::Rouge.render_doc(content)
-
-# pass options to CommonMarker
-CommonMarker::Rouge.render_html(content, [:SOURCEPOS])
 
 # use custom CommonMarker wrapper (must provide compatible render_doc)
 CommonMarker::Rouge.render_html(content, cmark_class: CommonMarkerWrapper)
@@ -57,4 +71,3 @@ CommonMarker::Rouge.render_html(content, formatter: Rouge::Formatters::HTMLTable
 ## License
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
-
