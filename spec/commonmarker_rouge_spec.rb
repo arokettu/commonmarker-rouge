@@ -14,11 +14,19 @@ puts 'highlight as ruby'
 ```
 MD
 
-    expect(html).to_not eq('')
+    expected = <<~HTML
+        <h1>Test</h1>
+        <pre><code>somecode
+        </code></pre>
+        <div class="highlighter-rouge language-ruby"><span class="nb">puts</span> <span class="s1">'highlight as ruby'</span>
+        </div>
+    HTML
+
+    expect(html).to eq(expected)
   end
 
   it 'escapes language markup' do
-    html = CommonMarker::Rouge.render_html(<<-MD, [:DEFAULT], [:UNSAFE])
+    html = CommonMarker::Rouge.render_html(<<-MD)
 ```haxxor">yay!
 somecode
 ```
@@ -69,13 +77,13 @@ EOF
 
   end
 
-  it 'omits HTML' do
-    html = CommonMarker::Rouge.render_html(<<-MD, [:DEFAULT])
-<img src="bla">
-MD
-
-    expected = "<!-- raw HTML omitted -->"
-    expect(html).to include(expected) # find only escaped sequence
-  end
+#   it 'omits HTML' do
+#     html = CommonMarker::Rouge.render_html(<<-MD, [:DEFAULT])
+# <img src="bla">
+# MD
+#
+#     expected = "<!-- raw HTML omitted -->"
+#     expect(html).to include(expected) # find only escaped sequence
+#   end
 
 end
