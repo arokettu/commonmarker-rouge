@@ -2,17 +2,17 @@ require 'spec_helper'
 
 describe CommonMarker::Rouge do
   it 'does something useful' do
-    html = CommonMarker::Rouge.render_html(<<-MD)
-# Test
-
-```
-somecode
-```
-
-```ruby
-puts 'highlight as ruby'
-```
-MD
+    html = CommonMarker::Rouge.render_html(<<~MD)
+        # Test
+        
+        ```
+        somecode
+        ```
+        
+        ```ruby
+        puts 'highlight as ruby'
+        ```
+    MD
 
     expected = <<~HTML
         <h1>Test</h1>
@@ -26,57 +26,56 @@ MD
   end
 
   it 'escapes language markup' do
-    html = CommonMarker::Rouge.render_html(<<-MD)
-```haxxor">yay!
-somecode
-```
-MD
+    html = CommonMarker::Rouge.render_html(<<~MD)
+        ```haxxor">yay!
+        somecode
+        ```
+    MD
 
     expected = 'language-haxxor&quot;&gt;yay!'
     expect(html).to include(expected) # find only escaped sequence
   end
 
   it 'supports table extensions' do
-    html = CommonMarker::Rouge.render_html(<<-MD, [:DEFAULT], [:DEFAULT], [:table])
-| foo | bar |
-| --- | --- |
-| baz | bim |
-MD
+    html = CommonMarker::Rouge.render_html(<<~MD, [:DEFAULT], [:DEFAULT], [:table])
+        | foo | bar |
+        | --- | --- |
+        | baz | bim |
+    MD
 
-    expected = <<-EOF
-<table>
-<thead>
-<tr>
-<th>foo</th>
-<th>bar</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>baz</td>
-<td>bim</td>
-</tr>
-</tbody>
-</table>
-EOF
+    expected = <<~HTML
+        <table>
+        <thead>
+        <tr>
+        <th>foo</th>
+        <th>bar</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+        <td>baz</td>
+        <td>bim</td>
+        </tr>
+        </tbody>
+        </table>
+    HTML
 
     expect(html).to(eq(expected))
-
   end
 
   it 'does not support table extensions' do
-    html = CommonMarker::Rouge.render_html(<<-MD, [:DEFAULT])
-| foo | bar |
-| --- | --- |
-| baz | bim |
+    html = CommonMarker::Rouge.render_html(<<~MD, [:DEFAULT])
+        | foo | bar |
+        | --- | --- |
+        | baz | bim |
     MD
 
     expected = "<p>| foo | bar |\n| --- | --- |\n| baz | bim |</p>\n"
 
     expect(html).to(eq(expected))
-
   end
 
+## TODO: make rouge work in unsafe env
 #   it 'omits HTML' do
 #     html = CommonMarker::Rouge.render_html(<<-MD, [:DEFAULT])
 # <img src="bla">
