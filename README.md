@@ -4,7 +4,6 @@
 [![Travis](https://img.shields.io/travis/sandfoxme/commonmarker-rouge.svg?maxAge=2592000)](https://travis-ci.org/sandfoxme/commonmarker-rouge)
 [![Code Climate](https://img.shields.io/codeclimate/maintainability/sandfoxme/commonmarker-rouge.svg?maxAge=2592000)](https://codeclimate.com/github/sandfoxme/commonmarker-rouge)
 [![Code Climate](https://img.shields.io/codeclimate/c/sandfoxme/commonmarker-rouge.svg?maxAge=2592000)](https://codeclimate.com/github/sandfoxme/commonmarker-rouge/coverage)
-[![Gemnasium](https://img.shields.io/gemnasium/sandfoxme/commonmarker-rouge.svg?maxAge=2592000)](https://gemnasium.com/sandfoxme/commonmarker-rouge)
 
 A [CommonMarker](https://rubygems.org/gems/commonmarker) wrapper with
 syntax highlight support by [Rouge](https://rubygems.org/gems/rouge).
