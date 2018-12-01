@@ -16,7 +16,7 @@ module CommonMarker
       ast
     end
 
-    def render_html(text, cmark_options = :DEFAULT, render_options = :DEFAULT, extensions = [], **cmr_options)
+    def render_html(text, cmark_options = :DEFAULT, render_options = :UNSAFE, extensions = [], **cmr_options)
       doc = render_doc(text, cmark_options, extensions, **cmr_options)
       doc.to_html(render_options)
     end
