@@ -9,6 +9,11 @@
 A [CommonMarker](https://rubygems.org/gems/commonmarker) wrapper with
 syntax highlight support by [Rouge](https://rubygems.org/gems/rouge).
 
+## IMPORTANT
+
+`commonmarker-rouge` currently works only with renderer in `:UNSAFE` mode.
+Don't forget to set `:UNSAFE` manually if you're overwriting the renderer mode. 
+
 ## Installation
 
 Add these lines to your application's Gemfile:
@@ -27,7 +32,7 @@ CommonMarker::Rouge.render_html(content)
 CommonMarker::Rouge.render_doc(content)
 
 # pass options to CommonMarker
-CommonMarker::Rouge.render_html(content, [:SAFE, :SOURCEPOS])
+CommonMarker::Rouge.render_html(content, [:SOURCEPOS])
 
 # use custom CommonMarker wrapper (must provide compatible render_doc)
 CommonMarker::Rouge.render_html(content, cmark_class: CommonMarkerWrapper)
