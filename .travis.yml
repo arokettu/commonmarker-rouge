@@ -1,9 +1,10 @@
 language: ruby
 dist: trusty
-rvm:
+rvm: # two highest, two lowest, head
   - '2.0'
-  - '2.4'
+  - '2.1'
   - '2.5'
+  - '2.6'
   - ruby-head
 before_install: gem install bundler -v '~> 1'
 script: bundle exec rspec && if [ -d coverage ]; then bundle exec codeclimate-test-reporter; fi
