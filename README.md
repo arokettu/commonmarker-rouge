@@ -23,50 +23,9 @@ Add these lines to your application's Gemfile:
 gem 'commonmarker-rouge'
 ```
 
-## Usage
+## Documentation
 
-Review the CommonMarker options to understand how to use the `render_html` command:
-
-* 1st parameter (optional) - [parse options](https://github.com/gjtorikian/commonmarker#parse-options)
-* 2nd parameter (optional) - [render options](https://github.com/gjtorikian/commonmarker#render-options)
-* 3rd parameter (optional) - [extensions](https://github.com/gjtorikian/commonmarker#extensions)
-
-```ruby
-# use default CommonMarker class and Rouge::Formatters::HTML formatter
-CommonMarker::Rouge.render_html(content)
-
-# Basic examples with 1st and 2nd optional parameters
-CommonMarker::Rouge.render_html(content), [:DEFAULT], [:UNSAFE])
-CommonMarker::Rouge.render_html(content, [:DEFAULT], [:SOURCEPOS])
-CommonMarker::Rouge.render_html(content, [:DEFAULT], [:UNSAFE, :SOURCEPOS])
-
-# use GitHub extensions - both 1st/2nd parameters required
-CommonMarker::Rouge.render_html(content), [:DEFAULT], [:DEFAULT], [:table])
-CommonMarker::Rouge.render_html(content), [:DEFAULT], [:DEFAULT], [:table, :strikethrough])
-CommonMarker::Rouge.render_html(content), [:DEFAULT], [:DEFAULT], [:table, :strikethrough, :autolink])
-CommonMarker::Rouge.render_html(content), [:DEFAULT], [:DEFAULT], [:table, :strikethrough, :tagfilter])
-
-# get CommonMarker parsed AST
-CommonMarker::Rouge.render_doc(content)
-
-# use custom CommonMarker wrapper (must provide compatible render_doc)
-CommonMarker::Rouge.render_html(content, cmark_class: CommonMarkerWrapper)
-
-# use custom Rouge formatter by class
-CommonMarker::Rouge.render_html(content, formatter_class: Rouge::Formatters::HTMLLinewise)
-# or by instance
-CommonMarker::Rouge.render_html(content, formatter: Rouge::Formatters::HTMLTable.new(
-  Rouge::Formatters::HTML.new
-))
-
-# pass some options to Rouge
-CommonMarker::Rouge.render_html(content, options: { css_class: 'custom-class' })
-# or
-CommonMarker::Rouge.render_html(content, formatter: Rouge::Formatters::HTMLTable.new(
-  Rouge::Formatters::HTML.new, code_class: 'rouge-code'
-))
-
-```
+Read full documentation here: <https://sandfox.dev/commonmarker-rouge.html>
 
 ## License
 
