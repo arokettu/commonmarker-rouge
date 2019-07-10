@@ -25,7 +25,7 @@ gem 'commonmarker-rouge'
 
 ## Documentation
 
-Read full documentation here: <https://sandfox.dev/commonmarker-rouge.html>
+Read full documentation here: <https://sandfox.dev/ruby/commonmarker-rouge.html>
 
 ## License
 
