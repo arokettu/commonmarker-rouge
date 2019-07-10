@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ['sandfox@sandfox.me']
 
   spec.summary       = 'CommonMarker wrapper with Rouge syntax highlighter'
-  spec.homepage      = 'https://sandfox.dev/commonmarker-rouge.html'
+  spec.homepage      = 'https://sandfox.dev/ruby/commonmarker-rouge.html'
   spec.license       = 'MIT'
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
