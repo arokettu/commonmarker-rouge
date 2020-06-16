@@ -7,4 +7,4 @@ rvm: # two highest, two lowest, head
   - '2.6'
   - ruby-head
 before_install: gem install bundler -v '~> 1'
-script: bundle exec rspec && if [ -d coverage ]; then bundle exec codeclimate-test-reporter; fi
+script: bundle exec rspec
