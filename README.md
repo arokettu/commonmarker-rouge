@@ -11,8 +11,6 @@ syntax highlight support by [Rouge](https://rubygems.org/gems/rouge).
 `commonmarker-rouge` currently works only with renderer in `:UNSAFE` mode.
 Don't forget to set `:UNSAFE` manually if you're overwriting the renderer mode.
 
-If you know how to fix this behavior please comment in [Issue #5](https://github.com/arokettu/commonmarker-rouge/issues/5)
-
 ## Installation
 
 Add these lines to your application's Gemfile:
@@ -24,6 +22,10 @@ gem 'commonmarker-rouge'
 ## Documentation
 
 Read full documentation here: <https://sandfox.dev/ruby/commonmarker-rouge.html>
+
+## Support
+
+Please file issues on our main repo at GitLab: <https://gitlab.com/sandfox/commonmarker-rouge/-/issues>
 
 ## License
 
