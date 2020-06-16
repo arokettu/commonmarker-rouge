@@ -1,7 +1,7 @@
 CommonMarker+Rouge
 ##################
 
-|RubyGems| |GitHub| |Gitlab| |Bitbucket|
+|RubyGems| |GitLab| |GitHub| |Bitbucket| |Gitea|
 
 A CommonMarker_ wrapper with syntax highlight support by Rouge_.
 
@@ -10,7 +10,7 @@ A CommonMarker_ wrapper with syntax highlight support by Rouge_.
     Don't forget to set ``:UNSAFE`` manually if you're overwriting the renderer mode.
 
     If you know how to fix this behavior please comment in
-    `Issue #5 on GitHub <https://github.com/sandfoxme/commonmarker-rouge/issues/5>`_
+    `Issue #5 on GitHub <https://github.com/arokettu/commonmarker-rouge/issues/5>`_
 
 Installation
 ============
@@ -81,9 +81,11 @@ The gem is available as open source under the terms of the `MIT License`_.
 
 .. |RubyGems|   image:: https://img.shields.io/gem/v/commonmarker-rouge.svg
    :target:     https://rubygems.org/gems/commonmarker-rouge
-.. |GitHub|     image:: https://img.shields.io/badge/GitHub-commonmarker--rouge-informational.svg?logo=github
-   :target:     https://github.com/sandfoxme/commonmarker-rouge
-.. |Gitlab|     image:: https://img.shields.io/badge/Gitlab-commonmarker--rouge-informational.svg?logo=gitlab
+.. |GitHub|     image:: https://img.shields.io/badge/get%20on-GitHub-informational.svg?logo=github
+   :target:     https://github.com/arokettu/commonmarker-rouge
+.. |GitLab|     image:: https://img.shields.io/badge/get%20on-Gitlab-informational.svg?logo=gitlab
    :target:     https://gitlab.com/sandfox/commonmarker-rouge
-.. |Bitbucket|  image:: https://img.shields.io/badge/Bitbucket-commonmarker--rouge-informational.svg?logo=bitbucket
+.. |Bitbucket|  image:: https://img.shields.io/badge/get%20on-Bitbucket-informational.svg?logo=bitbucket
    :target:     https://bitbucket.org/sandfox/commonmarker-rouge
+.. |Gitea|      image:: https://img.shields.io/badge/get%20on-Gitea-informational.svg
+   :target:     https://git.sandfox.dev/sandfox/commonmarker-rouge
