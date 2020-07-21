@@ -90,4 +90,4 @@ The gem is available as open source under the terms of the `MIT License`_.
 .. |Bitbucket|  image:: https://img.shields.io/badge/get%20on-Bitbucket-informational.svg?logo=bitbucket
    :target:     https://bitbucket.org/sandfox/commonmarker-rouge
 .. |Gitea|      image:: https://img.shields.io/badge/get%20on-Gitea-informational.svg
-   :target:     https://git.sandfox.dev/sandfox/commonmarker-rouge
+   :target:     https://sandfox.org/sandfox/commonmarker-rouge
