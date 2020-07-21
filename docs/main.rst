@@ -85,7 +85,7 @@ The gem is available as open source under the terms of the `MIT License`_.
    :target:     https://rubygems.org/gems/commonmarker-rouge
 .. |GitHub|     image:: https://img.shields.io/badge/get%20on-GitHub-informational.svg?logo=github
    :target:     https://github.com/arokettu/commonmarker-rouge
-.. |GitLab|     image:: https://img.shields.io/badge/get%20on-Gitlab-informational.svg?logo=gitlab
+.. |GitLab|     image:: https://img.shields.io/badge/get%20on-GitLab-informational.svg?logo=gitlab
    :target:     https://gitlab.com/sandfox/commonmarker-rouge
 .. |Bitbucket|  image:: https://img.shields.io/badge/get%20on-Bitbucket-informational.svg?logo=bitbucket
    :target:     https://bitbucket.org/sandfox/commonmarker-rouge
