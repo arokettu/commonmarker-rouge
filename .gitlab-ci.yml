@@ -1,0 +1,40 @@
+stages:
+  - test
+
+cache:
+  key: bundler-cache
+  paths:
+    - vendor/bundle
+
+.test:
+  before_script:
+  script:
+    - bundle install --path vendor/bundle
+    - bundle exec rspec
+    - bundle update --gemfile=Gemfile.lowest
+    - bundle exec rspec
+
+test-2.0:
+  extends: .test
+  stage: test
+  image: ruby:2.0
+
+test-2.1:
+  extends: .test
+  stage: test
+  image: ruby:2.1
+
+test-2.7:
+  extends: .test
+  stage: test
+  image: ruby:2.7
+
+test-3.0:
+  extends: .test
+  stage: test
+  image: ruby:3.0
+
+test-latest:
+  extends: .test
+  stage: test
+  image: ruby:latest

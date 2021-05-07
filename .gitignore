@@ -10,6 +10,9 @@
 /test/version_tmp/
 /tmp/
 
+## IDE
+/.idea
+
 ## Specific to RubyMotion:
 .dat*
 .repl_history
@@ -27,6 +30,7 @@ build/
 /vendor/bundle
 /lib/bundler/man/
 Gemfile.lock
+Gemfile.*.lock
 .ruby-version
 .ruby-gemset
 
