@@ -81,13 +81,13 @@ The gem is available as open source under the terms of the `MIT License`_.
 .. _render options: https://github.com/gjtorikian/commonmarker#render-options
 .. _extensions:     https://github.com/gjtorikian/commonmarker#extensions
 
-.. |RubyGems|   image:: https://img.shields.io/gem/v/commonmarker-rouge.svg
+.. |RubyGems|   image:: https://img.shields.io/gem/v/commonmarker-rouge.svg?style=flat-square
    :target:     https://rubygems.org/gems/commonmarker-rouge
-.. |GitHub|     image:: https://img.shields.io/badge/get%20on-GitHub-informational.svg?logo=github
+.. |GitHub|     image:: https://img.shields.io/badge/get%20on-GitHub-informational.svg?style=flat-square&logo=github
    :target:     https://github.com/arokettu/commonmarker-rouge
-.. |GitLab|     image:: https://img.shields.io/badge/get%20on-GitLab-informational.svg?logo=gitlab
+.. |GitLab|     image:: https://img.shields.io/badge/get%20on-GitLab-informational.svg?style=flat-square&logo=gitlab
    :target:     https://gitlab.com/sandfox/commonmarker-rouge
-.. |Bitbucket|  image:: https://img.shields.io/badge/get%20on-Bitbucket-informational.svg?logo=bitbucket
+.. |Bitbucket|  image:: https://img.shields.io/badge/get%20on-Bitbucket-informational.svg?style=flat-square&logo=bitbucket
    :target:     https://bitbucket.org/sandfox/commonmarker-rouge
-.. |Gitea|      image:: https://img.shields.io/badge/get%20on-Gitea-informational.svg
+.. |Gitea|      image:: https://img.shields.io/badge/get%20on-Gitea-informational.svg?style=flat-square&logo=gitea
    :target:     https://sandfox.org/sandfox/commonmarker-rouge
