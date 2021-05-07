@@ -10,6 +10,7 @@ cache:
   before_script:
     - bundle config path `pwd`/vendor/bundle
     - bundle config without development_extra
+    - gem install bundler
   script:
     - bundle update
     - bundle exec rspec
