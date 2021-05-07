@@ -8,8 +8,10 @@ cache:
 
 .test:
   before_script:
+    - bundle config path `pwd`/vendor/bundle
+    - bundle config without development
   script:
-    - bundle install --path vendor/bundle --without=development
+    - bundle update
     - bundle exec rspec
     - bundle update --gemfile=Gemfile.lowest
     - bundle exec rspec
