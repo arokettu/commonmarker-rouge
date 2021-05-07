@@ -9,7 +9,7 @@ cache:
 .test:
   before_script:
     - bundle config path `pwd`/vendor/bundle
-    - bundle config without development
+    - bundle config without development_extra
   script:
     - bundle update
     - bundle exec rspec
@@ -25,6 +25,31 @@ test-2.1:
   extends: .test
   stage: test
   image: ruby:2.1
+
+test-2.2:
+  extends: .test
+  stage: test
+  image: ruby:2.2
+
+test-2.3:
+  extends: .test
+  stage: test
+  image: ruby:2.3
+
+test-2.4:
+  extends: .test
+  stage: test
+  image: ruby:2.4
+
+test-2.5:
+  extends: .test
+  stage: test
+  image: ruby:2.5
+
+test-2.6:
+  extends: .test
+  stage: test
+  image: ruby:2.6
 
 test-2.7:
   extends: .test
