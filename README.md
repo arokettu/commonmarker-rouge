@@ -1,7 +1,7 @@
 # CommonMarker+Rouge
 
-[![Gem](https://img.shields.io/gem/v/commonmarker-rouge.svg?maxAge=2592000)](https://rubygems.org/gems/commonmarker-rouge)
-[![Travis](https://img.shields.io/travis/arokettu/commonmarker-rouge.svg?maxAge=2592000)](https://travis-ci.org/arokettu/commonmarker-rouge)
+[![Gem](https://img.shields.io/gem/v/commonmarker-rouge.svg?style=flat-square)](https://rubygems.org/gems/commonmarker-rouge)
+[![Gitlab pipeline status](https://img.shields.io/gitlab/pipeline/sandfox/commonmarker-rouge/master.svg?style=flat-square)](https://gitlab.com/sandfox/commonmarker-rouge/-/pipelines)
 
 A [CommonMarker](https://rubygems.org/gems/commonmarker) wrapper with
 syntax highlight support by [Rouge](https://rubygems.org/gems/rouge).
