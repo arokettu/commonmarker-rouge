@@ -9,7 +9,7 @@ cache:
 .test:
   before_script:
   script:
-    - bundle install --path vendor/bundle
+    - bundle install --path vendor/bundle --without=development
     - bundle exec rspec
     - bundle update --gemfile=Gemfile.lowest
     - bundle exec rspec
