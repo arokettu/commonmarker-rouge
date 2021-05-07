@@ -10,27 +10,11 @@ cache:
   before_script:
     - bundle config path `pwd`/vendor/bundle
     - bundle config without development_extra
-    - gem install bundler
   script:
     - bundle update
     - bundle exec rspec
     - bundle update --gemfile=Gemfile.lowest
     - bundle exec rspec
-
-test-2.0:
-  extends: .test
-  stage: test
-  image: ruby:2.0
-
-test-2.1:
-  extends: .test
-  stage: test
-  image: ruby:2.1
-
-test-2.2:
-  extends: .test
-  stage: test
-  image: ruby:2.2
 
 test-2.3:
   extends: .test
