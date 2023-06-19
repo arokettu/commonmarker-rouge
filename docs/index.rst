@@ -63,11 +63,6 @@ Review the CommonMarker options to understand how to use the ``render_html`` com
       Rouge::Formatters::HTML.new, code_class: 'rouge-code'
     ))
 
-Support
-=======
-
-Please file issues on our main repo at GitLab: https://gitlab.com/sandfox/commonmarker-rouge/-/issues
-
 License
 =======
 
