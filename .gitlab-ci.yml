@@ -16,37 +16,19 @@ cache:
     - bundle update --gemfile=Gemfile.lowest
     - bundle exec rspec
 
-test-2.3:
+test:
   extends: .test
   stage: test
-  image: ruby:2.3
-
-test-2.4:
-  extends: .test
-  stage: test
-  image: ruby:2.4
-
-test-2.5:
-  extends: .test
-  stage: test
-  image: ruby:2.5
-
-test-2.6:
-  extends: .test
-  stage: test
-  image: ruby:2.6
-
-test-2.7:
-  extends: .test
-  stage: test
-  image: ruby:2.7
-
-test-3.0:
-  extends: .test
-  stage: test
-  image: ruby:3.0
-
-test-latest:
-  extends: .test
-  stage: test
-  image: ruby:latest
+  image: ruby:${RUBY_VERSION}
+  parallel:
+    matrix:
+      - RUBY_VERSION:
+          - '2.3' # lowest version
+          - '2.4'
+          - '2.5'
+          - '2.6'
+          - '2.7'
+          - '3.0'
+          - '3.1'
+          - '3.2'
+          - 'latest' # latest
