@@ -16,6 +16,8 @@
 * Fixed incompatibility with commonmarker 0.18
 * commonmarker 0.18 is now required
 
+[#3]: https://github.com/arokettu/commonmarker-rouge/pull/3
+
 ### 1.4.0
 
 *Sep 26, 2017*
@@ -37,12 +39,16 @@
 * Add language-%fence_info% to highlighter-rouge div wrapper ([#2])
 * Allow using Rouge 2.x
 
+[#2]: https://github.com/arokettu/commonmarker-rouge/pull/2
+
 ### 1.1.0
 
 *May 24, 2017*
 
 * Fixed incompatibility with commonmarker >= 0.14.5 ([#1])
 * commonmarker >= 0.14.5 is now required
+ 
+[#1]: https://github.com/arokettu/commonmarker-rouge/pull/1
 
 ### 1.0.1
 
@@ -55,7 +61,3 @@
 *Apr 5, 2016*
 
 * Initial release
-
-[#1]: https://github.com/arokettu/commonmarker-rouge/pull/1
-[#2]: https://github.com/arokettu/commonmarker-rouge/pull/2
-[#3]: https://github.com/arokettu/commonmarker-rouge/pull/3
