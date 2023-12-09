@@ -56,6 +56,6 @@
 
 * Initial release
 
-[#1]: https://github.com/sandfoxme/commonmarker-rouge/pull/1
-[#2]: https://github.com/sandfoxme/commonmarker-rouge/pull/2
-[#3]: https://github.com/sandfoxme/commonmarker-rouge/pull/3
+[#1]: https://github.com/arokettu/commonmarker-rouge/pull/1
+[#2]: https://github.com/arokettu/commonmarker-rouge/pull/2
+[#3]: https://github.com/arokettu/commonmarker-rouge/pull/3
